@@ -3,9 +3,9 @@ This documentation describes the architecture, methodology, evaluation, and lear
 
 ## Project Description
 
-GeoGuesser-RAG is an interactive, Retrieval-Augmented Generation (RAG) application designed as an educational and entertaining quiz game. All factual data—such as country facts, capitals, flags, and food—is sourced from a custom CSV dataset, which serves as the knowledge base for the RAG pipeline.
+GeoGuesser-RAG is an interactive, Retrieval-Augmented Generation (RAG) application designed as an educational and entertaining quiz game. All factual data, such as country facts, capitals, flags, and food, is sourced from a custom CSV dataset, which serves as the knowledge base for the RAG pipeline.
 
-At the heart of the system is Google Gemini, a state-of-the-art large language model (LLM), integrated via LangChain. The LLM generates user-facing hints and answers by combining retrieved, context-rich chunks from the knowledge base with generative capabilities.
+At the heart of the system is Google Gemini, a large language model (LLM), integrated via LangChain. The LLM generates user-facing hints and answers by combining retrieved, context-rich chunks from the knowledge base with generative capabilities.
 
 The application currently supports three engaging game modes:
 1. **Hint Game:** Users receive dynamically generated hints about a country and must guess which country is being described.
@@ -55,7 +55,6 @@ The result of this data engineering process is a single, clean CSV file (`countr
 
 ## RAG Improvements
 
-### RAG Improvements
 
 To maximize the effectiveness of retrieval-augmented generation in GeoGuesser-RAG, several targeted improvements were implemented:
 
