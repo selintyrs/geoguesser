@@ -83,6 +83,12 @@ To enable efficient retrieval and ensure high-quality responses from the languag
 
 ---
 
+## Vector Store Selection
+
+For efficient semantic search and fast retrieval of relevant country facts, the application uses **FAISS** (Facebook AI Similarity Search) as its vector store. All text chunks generated from the cleaned CSV dataset are embedded and indexed with FAISS, enabling scalable and low-latency similarity search during game play. This setup allows the system to quickly find the most relevant information for each query, which is crucial for a smooth user experience in a RAG-based application.
+
+---
+
 ## Choice of LLM
 For this project, Google Gemini 1.5 Pro was selected as the main language model. Gemini is particularly well-suited for Retrieval-Augmented Generation (RAG) applications due to its advanced reasoning capabilities, large context window, and support for complex multi-turn instructions. Its multimodal capabilities enable it to understand nuanced prompts and synthesize context-rich hints from retrieved country facts. This makes Gemini a strong choice for delivering high-quality, diverse, and accurate hints in a GeoGuesser-like educational game, where the model must adapt to various topics (history, food, geography) and generate engaging, natural language clues based on retrieved context.
 
@@ -134,8 +140,16 @@ Accuracy, precision, and recall were calculated using `sklearn.metrics` to objec
 - **Capital** tests achieved moderate accuracy and high precision, indicating the model reliably recognises correct answers but struggles with close variations or alternative spellings. Expanding accepted answers (e.g., by including common typos or alternate names) could improve usability and fairness.
 - **General Observation:** The overall performance reveals that retrieval-augmented generation works reliably for factual, structured tasks (flags, capitals), while more open-ended hints benefit significantly from smarter retrieval strategies like query expansion. The strict evaluation metrics also point to the value of continuously refining both data quality and retrieval pipelines.
 
+---
+
+## Deployment
+
+GeoGuesser-RAG is deployed as a public application on **Huggingface Spaces**, making the interactive quiz game easily accessible via any web browser without the need for local installation.  
+The user interface is built with **Gradio**, providing an intuitive, interactive web experience for both gameplay and testing.  
+Deployment on Huggingface’s hosted infrastructure ensures reproducibility and reliable access for users and evaluators.
 
 ---
+
 ## Conclusion
 The GeoGuesser-RAG project demonstrates the potential and challenges of applying retrieval-augmented generation techniques in an interactive quiz game setting. Automated evaluations show that query expansion significantly improves hint accuracy, while re-ranking in its current form does not add further benefit. Flag and capital quizzes achieve high precision due to the structured and deterministic nature of the evaluation criteria.
 
