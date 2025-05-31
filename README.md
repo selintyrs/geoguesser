@@ -163,6 +163,30 @@ Further improvements could include:
 
 With these results, GeoGuesser-RAG is well positioned as a testbed for future educational and entertainment use cases leveraging Retrieval-Augmented Generation.
 
+---
+
+## Additional Effort & Features
+
+- **Custom Data Engineering Pipeline:**  
+  All raw data sources were cleaned, normalized, merged, and enriched in a dedicated preprocessing notebook, resulting in a single, highly structured CSV (`countries_final.csv`) that goes well beyond simple dataset ingestion.
+
+- **Flexible Chunking Strategies:**  
+  Developed and compared both character-based and token-based chunking (with overlap) to improve semantic retrieval, not just standard fixed chunk sizes.
+
+- **UMAP Embedding Visualization:**  
+  Used UMAP to visualize and analyze embedding clusters, helping to debug and verify semantic grouping in the vector space.
+
+- **Automated, Comparative Evaluation:**  
+  Designed and implemented automated tests to objectively compare different retrieval pipelines (not just manual testing). Results were visualized and critically interpreted.
+
+- **Interactive Gradio Interface & Public Deployment:**  
+  Deployed the game on Huggingface Spaces using Gradio, making it accessible to external users and reviewers—not just a local prototype.
+
+- **Modular, Extensible Codebase:**  
+  Structured the code for easy future integration of additional game modes or new data attributes.
+
+- **Transparent Critical Discussion:**  
+  Documented limitations, lessons learned, and concrete next steps—going beyond just reporting results.
 
 
 ---
